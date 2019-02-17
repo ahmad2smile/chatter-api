@@ -18,7 +18,8 @@ function bootstrap() {
             origin: "http://localhost:*",
         });
         app.useStaticAssets(path_1.join(__dirname, "..", "public"));
-        yield app.listen(3005);
+        const port = process.env.PORT || 3005;
+        yield app.listen(port);
     });
 }
 bootstrap();

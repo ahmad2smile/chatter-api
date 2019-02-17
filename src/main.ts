@@ -11,6 +11,8 @@ async function bootstrap() {
 
 	app.useStaticAssets(join(__dirname, "..", "public"));
 
-	await app.listen(3005);
+	const port = process.env.PORT || 3005;
+
+	await app.listen(port);
 }
 bootstrap();
