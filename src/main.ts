@@ -1,6 +1,6 @@
-import { NestFactory } from "@nestjs/core";
-import { join } from "path";
-import { AppModule } from "./app.module";
+import {NestFactory} from "@nestjs/core";
+import {join} from "path";
+import {AppModule} from "./app.module";
 
 async function bootstrap() {
 	const app = await NestFactory.create(AppModule);
@@ -9,7 +9,7 @@ async function bootstrap() {
 		origin: "http://localhost:*",
 	});
 
-	app.useStaticAssets(join(__dirname, "..", "public"));
+	app.useStaticAssets(join(__dirname));
 
 	const port = process.env.PORT || 3005;
 
